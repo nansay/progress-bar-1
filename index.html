@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Progress Bar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style media="screen">
+      .bar-container {
+        padding: 30px 0px;
+      }
+      .progress .progress-bar {
+        width: 100%;
+        -webkit-transition: width 1s ease-in-out;
+        -moz-transition: width 1s ease-in-out;
+        -o-transition: width 1s ease-in-out;
+        transition: width 1s ease-in-out;
+      }
+
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+          <div class="row">
+            <div class="bar-container">
+              <h1>Progress Bar</h1>
+              <br />
+              <div class="progress">
+                <progress id="progressBar" class="progress-bar progress-bar-success" value="10" max="100"></progress>
+                <!-- <progress id="progressBar2" class="progress-bar progress-bar-success" value="25" max="100"></progress> -->
+              </div>
+              <button class="btn btn-danger" onclick="increaseLength()">+25</button>
+              <button class="btn btn-danger" onclick="increaseLength()">+10</button>
+              <button class="btn btn-danger" onclick="decreaseLength()">-10</button>
+              <button class="btn btn-danger" onclick="decreaseLength()">-25</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <script type="text/javascript">
+    var currentLength = document.getElementById("progressBar").value;
+    function increaseLength() {
+
+      if (currentLength < 90) {
+        currentLength += 10;
+        document.getElementById("progressBar").value = currentLength;
+      } else if ((currentLength > 90 && currentLength < 100)) {
+        currentLength == 100;
+        document.getElementById("progressBar").value = currentLength;
+      } else if ((currentLength > 90 && currentLength < 100)) {
+        currentLength == 100;
+        document.getElementById("progressBar").value = currentLength;
+      } else {
+        //alert("You reached the maximum length of the progressbar!")
+      }
+    }
+
+    function decreaseLength(durrentLength) {
+      if (currentLength > 10) {
+        currentLength -= 10;
+        document.getElementById("progressBar").value = currentLength;
+      } else if (currentLength > 0 && currentLength < 10) {
+        currentLength == 0;
+        document.getElementById("progressBar").value == currentLength;
+      } else {
+        //alert("You reached the minimum length of the progressbar!")
+      }
+    }
+
+  </script>
+</html>
